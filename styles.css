@@ -1,0 +1,139 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --clr-primary-300: hsl(233, 47%, 7%);
+  --clr-primary-200: hsl(244, 38%, 16%);
+  --clr-primary-100: hsl(277, 64%, 61%);
+
+  /* Neutral */
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-300: hsla(0, 0%, 100%, 0.6);
+
+  /* Font size */
+
+  --fs-main: 15px;
+
+  /* Font family */
+
+  --ff-inter: "Inter", sans-serif;
+  --ff-lexend: "Lexend Deca", sans-serif;
+
+  /* Font weight */
+  --fw-light: 400;
+  --fw-bold: 700;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-primary-300);
+  color: var(--clr-neutral-100);
+  padding: 3rem 1rem;
+  height: 100vh;
+}
+
+.box {
+  background-color: var(--clr-primary-200);
+  max-width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.box__img {
+  position: relative;
+}
+
+.box__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.box__img::after {
+  content: "";
+  background-color: var(--clr-primary-100);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.6;
+}
+
+.box__text__area {
+  text-align: center;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.box__heading {
+  line-height: 1;
+  font-family: var(--ff-lexend);
+}
+
+.violet-color {
+  color: var(--clr-primary-100);
+}
+
+.box__desc {
+  font-family: var(--ff-inter);
+  color: var(--clr-neutral-200);
+}
+
+.box__text__area > ul {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  font-family: var(--ff-lexend);
+}
+
+.box__text__area > ul p {
+  text-transform: uppercase;
+  font-weight: var(--fw-light);
+  color: var(--clr-neutral-200);
+}
+
+@media (min-width: 1000px) {
+  main {
+    display: grid;
+    justify-content: center;
+    background-color: var(--clr-primary-300);
+    color: var(--clr-neutral-100);
+  }
+
+  .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    max-width: 1000px;
+  }
+
+  .box__heading {
+    text-align: left;
+  }
+
+  .box__img {
+    grid-area: right;
+  }
+
+  .box__text__area {
+    padding: 4.5rem;
+    grid-area: left;
+    text-align: left;
+  }
+
+  .box__text__area > ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box__text__area > ul li {
+    margin: 0;
+    padding: 0;
+  }
+}
